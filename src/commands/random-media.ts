@@ -2,13 +2,11 @@ import { ChatInputCommandInteraction, SlashCommandBuilder } from "discord.js";
 import { readdirSync } from "fs";
 import { join } from "path";
 import { Command, MediaDirectory } from "../types";
+import mediaListJson from "../../data/media-list.json";
 
 
 const mediaPath = "/home/krami/bot-media";
-
-const mediaList: Array<MediaDirectory> = [
-    { name: "kot-kobryla", directory: "kot-kobryla", prettyName: "Kot kobryla" }
-]
+const mediaList: Array<MediaDirectory> = mediaListJson;
 
 // Format conforming to SlashCommandStringOption (name, value)
 const requestMediaList = mediaList.map(({
@@ -56,7 +54,7 @@ const command: Command = {
 
             if (file !== undefined) {
                 await interaction.editReply({
-                    content: (`## Wylosowano ${fileIndex} z ${filesFound}
+                    content: (`## [${fileIndex}/${filesFound}]
                         Kategoria: **${category}**
                         `).replace(/  +/g, ""),
                     files: [{

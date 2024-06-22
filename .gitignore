@@ -132,3 +132,6 @@ dist
 
 # Server scripts (logging, deployment, etc.)
 scripts/
+
+# Bot data (json lists, etc.)
+data/
