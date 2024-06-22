@@ -1,6 +1,7 @@
 import readyEvent from "./ready";
 import interactionCreateEvent from "./interaction-create";
 
+
 // Export all events
 const events = {
     readyEvent,
