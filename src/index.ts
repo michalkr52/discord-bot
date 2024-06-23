@@ -11,7 +11,8 @@ dotenv.config({ path: "~/source/discord-bot/.env" });
 const intents = [
     GatewayIntentBits.Guilds,
     GatewayIntentBits.GuildMembers,
-    GatewayIntentBits.GuildMessages
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.GuildVoiceStates
 ];
 
 const client = new Client({ intents: intents });
