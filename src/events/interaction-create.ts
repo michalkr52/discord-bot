@@ -6,7 +6,7 @@ const event: Event = {
     name: Events.InteractionCreate,
     async execute(interaction: CommandInteraction) {
         if (!(interaction instanceof ChatInputCommandInteraction) || !interaction.isChatInputCommand()) return;
-        console.log("Interaction:", interaction);
+        // console.log("Interaction:", interaction);
 
         const command = interaction.client.commands.get(interaction.commandName);
         if (!command) {
